@@ -14,16 +14,34 @@ import streamlit as st
 import json
 import os
 from datetime import datetime
+import streamlit.components.v1 as components
+
+# Vérification Google Search Console
+components.html(
+    """
+    <script>
+        var meta = document.createElement('meta');
+        meta.name = "google-site-verification";
+        meta.content = "72BQlsL9Ov6yC70acGkWbF_X9LiSTk0dL_hxBQHLcRA";
+        parent.document.getElementsByTagName('head')[0].appendChild(meta);
+    </script>
+    """,
+    height=0,
+)
 
 # Configuration
 st.set_page_config(
     page_title="Plateforme Maîtres de Maison",
-    page_icon="👨‍🏫",
+    page_icon="🏫",
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Fichier de base de données
+
+
+    
+
+
 DB_FILE = "maitres_data.json"
 
 # ==================== FONCTIONS DE BASE DE DONNÉES ====================
@@ -301,3 +319,4 @@ st.markdown("""
     <p><small>© 2025 Plateforme Maîtres de Maison | Version 2.0 | 📱 Responsive</small></p>
 </div>
 """, unsafe_allow_html=True)
+
